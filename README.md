@@ -14,8 +14,8 @@ module "coreos_metadata" {
   stream   = "testing"
 }
 
-output "coreos_download_url" {
-  value = module.coreos_metadata.download_url
+locals {
+  coreos_download_url = module.coreos_metadata.download_url
 }
 ```
 
