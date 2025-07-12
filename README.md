@@ -8,7 +8,7 @@ It's only tested for the `proxmoxve` platform, and may need adjustments for othe
 
 ```hcl
 module "coreos_metadata" {
-  source = "github.com/b-/terraform-module-coreos-metadata"
+  source = "github.com/perchnet/terraform-module-coreos-metadata"
 
   platform = "proxmoxve"
   stream   = "testing"
