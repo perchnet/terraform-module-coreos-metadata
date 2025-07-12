@@ -45,7 +45,7 @@ locals {
   disk_metadata             = local.artifacts.formats[var.format].disk
   download_url              = local.disk_metadata.location
   download_sum              = local.disk_metadata.sha256
-  download_sum_uncompressed = local.disk_metadata.uncompressed_sha256
+  download_sum_uncompressed = try(local.disk_metadata.uncompressed-sha256, null)
   download_signature        = local.disk_metadata.signature
 
   coreos_img_filename = basename(local.download_url)
