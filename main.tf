@@ -33,7 +33,7 @@ locals {
   stream_url = coalesce(var.stream_url, "https://builds.coreos.fedoraproject.org/streams/${var.stream}.json")
 }
 data "http" "coreos_stream_metadata" {
-  url = "https://builds.coreos.fedoraproject.org/streams/${var.stream}.json"
+  url = local.stream_url
 }
 
 locals {
